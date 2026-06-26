@@ -1,3 +1,14 @@
+---
+title: HR FAQ Bot
+emoji: 💼
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 5.0.0
+app_file: ui.py
+pinned: false
+---
+
 # HR Policy FAQ Bot — prototype
 
 A runnable prototype of the proposal's core: a **retrieval-grounded FAQ bot** that
