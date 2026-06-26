@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Runtime data (never commit these)
+tickets.db
+chroma_db/
+
+# Model cache (80MB — download on first run)
+.cache/
+sentence_transformers/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Office lock files
+.~lock.*
