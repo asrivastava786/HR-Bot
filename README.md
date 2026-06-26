@@ -12,6 +12,8 @@ python_version: "3.11"
 
 # HR Policy FAQ Bot — prototype
 
+<img src="live-badge.svg" alt="Live"/> **[Try the live demo →](https://huggingface.co/spaces/Ads786/hr-faq-bot)**
+
 A runnable prototype of the proposal's core: a **retrieval-grounded FAQ bot** that
 answers new-hire policy questions, **cites its source**, **escalates to a human**
 when it's unsure *or* when the topic is sensitive, and lets the user **raise an HR
