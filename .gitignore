@@ -20,3 +20,7 @@ Thumbs.db
 
 # Office lock files
 .~lock.*
+
+# Personal prep / internal notes (not part of submission)
+DEEP_DIVE.md
+DECISIONS.md
