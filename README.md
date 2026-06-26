@@ -1,14 +1,3 @@
----
-title: HR FAQ Bot
-emoji: 💼
-colorFrom: blue
-colorTo: indigo
-sdk: gradio
-sdk_version: 5.33.0
-app_file: ui.py
-pinned: false
-python_version: "3.11"
----
 
 # HR Policy FAQ Bot — prototype
 
