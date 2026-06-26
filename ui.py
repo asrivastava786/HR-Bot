@@ -10,6 +10,12 @@ import gradio as gr
 from retriever import Retriever
 import tickets
 
+# Gradio 5.x requires type="messages" explicitly; 6.x removed the parameter
+# (messages became the default). Detect at runtime so the same code runs both
+# locally (6.x) and on HF Spaces (5.x).
+_GR_MAJOR = int(gr.__version__.split(".")[0])
+_CHATBOT_KWARGS = {"height": 380, **({"type": "messages"} if _GR_MAJOR < 6 else {})}
+
 retriever = Retriever()
 
 REASON_LABEL = {
@@ -78,7 +84,7 @@ with gr.Blocks(title="HR Policy FAQ (prototype)") as demo:
                 "Grounded answers with citations. Low-confidence or sensitive "
                 "questions route to HR via a ticket.")
     last = gr.State({})
-    chat = gr.Chatbot(height=380)
+    chat = gr.Chatbot(**_CHATBOT_KWARGS)
     with gr.Row():
         box = gr.Textbox(placeholder="Ask a policy question...", scale=8,
                          show_label=False)
