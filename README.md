@@ -5,9 +5,9 @@ answers new-hire policy questions, **cites its source**, **escalates to a human*
 when it's unsure *or* when the topic is sensitive, and lets the user **raise an HR
 ticket** from any escalation.
 
-> **Prototype, not production.** The production recommendation is the AWS-managed
-> path (Amazon Q Business / Bedrock Knowledge Bases). This local OSS version exists
-> so the idea can be cloned, run, and demoed in minutes. See "Path to production".
+> **Prototype, not production.** This local OSS version exists so the idea can be
+> cloned, run, and demoed in minutes. See "Path to production" for how these
+> components map to managed enterprise services.
 
 ## The core idea: four independent gates
 
@@ -79,13 +79,13 @@ Never optimise answer-rate alone.
 
 Same contract, managed internals:
 
-| Prototype | Production (AWS-managed) |
+| Prototype | Production |
 |---|---|
-| `data/*.xlsx` + loader | Handbook chunked into S3; `status`-gated |
-| sentence-transformers + Chroma | Bedrock Knowledge Bases (embeddings + OpenSearch) |
-| Extractive passage | Bedrock model phrasing *from* the retrieved passage + groundedness check |
+| `data/*.xlsx` + loader | Handbook chunked into a managed knowledge base; `status`-gated |
+| sentence-transformers + Chroma | Managed embeddings + vector search (cloud provider of choice) |
+| Extractive passage | Generative rephrasing *from* retrieved passage + groundedness check |
 | SQLite tickets | ServiceNow / Jira / email + dedup |
-| Gradio / FastAPI | Lambda fronting Slack / Teams |
+| Gradio / FastAPI | Slack / Teams bot fronting the same API |
 
 ## Files
 
