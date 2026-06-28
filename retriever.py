@@ -36,7 +36,8 @@ TOPK_MARGIN = float(os.getenv("FAQ_TOPK_MARGIN", "0.15"))
 _DEFAULT_SENSITIVE_KEYWORDS = (
     "harass,discriminat,terminat,fired,laid off,layoff,fmla,immigration,visa,"
     "leave of absence,medical leave,disability,accommodation,complaint,grievance,"
-    "investigation,whistleblow,retaliat,cobra,severance,wrongful,relocation"
+    "investigation,whistleblow,retaliat,cobra,severance,wrongful,relocation,"
+    "wifi,wi-fi,wireless password,printer,it support,laptop setup,vpn setup"
 )
 _SENSITIVE_RE = re.compile(
     "|".join(re.escape(k.strip()) for k in
